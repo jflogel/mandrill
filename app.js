@@ -33,7 +33,9 @@ app.post('/api/sendEmail', function(req, res) {
     from: 'fromjason.flogel@gmail.com',
     to: 'tojason.flogel@gmail.com',
     subject: 'hello',
-    text: 'hello world!'
+    text: 'hello world!',
+    headers: [{key:"X-MC-Tags", value:"TAG1,TAG2"},
+              {key: "X-MC-Metadata", value: '{"id":1}'}]
   }, function(error, info) {
     console.log('error: ' + error);
     console.log('info.accepted: ' + info.accepted);

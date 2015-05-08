@@ -3,7 +3,7 @@ var bodyParser = require('body-parser')
 var nodemailer = require('nodemailer');
 
 var app = express();
-app.use(bodyParser.json());
+app.use(bodyParser());
 app.use(express.static("app"));
 
 var transporter = nodemailer.createTransport({

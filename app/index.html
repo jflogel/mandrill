@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html ng-app="mandrill-app" ng-controller="MandrillCtrl as mandrill">
+
+<head>
+</head>
+
+<body>
+  <p>
+    <a href="" ng-click="mandrill.sendEmail()">Send Email</a> to:
+    <input type="email" id="toAddress" ng-model="mandrill.toAddress" />
+  </p>
+
+  <p>
+    <a href="" ng-click="mandrill.refresh()">Retrieve webhook calls</a>
+    <ul>
+      <li ng-repeat="message in mandrill.messages">
+        {{message.message}}
+      </li>
+    </ul>
+  </p>
+
+  <script src="components/angular/angular.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

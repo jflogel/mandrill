@@ -14,7 +14,12 @@
     <a href="" ng-click="mandrill.refresh()">Retrieve webhook calls</a>
     <ul>
       <li ng-repeat="message in mandrill.messages">
-        {{message.message}}
+        <div>Sent to: {{message.msg.email}}</div>
+        <div>Event status: {{message.event}}</div>
+        <div>State: {{message.msg.state}}</div>
+        <div>Tags: {{message.msg.tags}}</div>
+        <div>Metadata: {{message.msg.metadata}}</div>
+        <div>Timestamp: {{message.msg.ts | date:'medium'}}</div>
       </li>
     </ul>
   </p>

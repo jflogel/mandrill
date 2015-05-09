@@ -24,14 +24,9 @@ app.get('/api/messages', function(req, res) {
 });
 
 app.post('/api/sendEmail', function(req, res) {
-  emailStatus['messages'].push({
-    message: 'delivered',
-    time: new Date()
-  });
-  console.log(req.body.toAddress);
   transporter.sendMail({
     from: 'fromjason.flogel@gmail.com',
-    to: 'tojason.flogel@gmail.com',
+    to: req.body.toAddress,
     subject: 'hello',
     text: 'hello world!',
     headers: [{key:"X-MC-Tags", value:"TAG1,TAG2"},
@@ -47,8 +42,10 @@ app.post('/api/sendEmail', function(req, res) {
 });
 
 app.post('/api/webhook', function(req, res) {
-  console.log(req.body);
-  // emailStatus['messages'].push({message:'delivered',time: new Date()});
+  var mandrillEvents = req.body.mandrill_events;
+  for (var i = 0; i < mandrillEvents.length; i++) {
+    emailStatus['messages'].push(mandrillEvents[i]);
+  }
   res.sendStatus(200);
 });
 

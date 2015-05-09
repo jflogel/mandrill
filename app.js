@@ -42,7 +42,7 @@ app.post('/api/sendEmail', function(req, res) {
 });
 
 app.post('/api/webhook', function(req, res) {
-  var mandrillEvents = req.body.mandrill_events;
+  var mandrillEvents = JSON.parse(req.body.mandrill_events);
   for (var i = 0; i < mandrillEvents.length; i++) {
     emailStatus['messages'].push(mandrillEvents[i]);
   }

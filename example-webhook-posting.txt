@@ -4,7 +4,11 @@ headers:
 
 body:
 
-{"mandrill_events":[{"event":"send","_id":"83885d0c42e44109a559fae50402a192","msg":{"ts":1431141575,"subject":"hello","email"
-:"tojason.flogel@gmail.com","tags":["TAG1","TAG2"],"opens":[],"clicks":[],"state":"sent","smtp_events":[],
-"subaccount":null,"resends":[],"reject":null,"_id":"83885d0c42e44109a559fae50402a192","metadata":{"id":1},
-"sender":"fromjason.flogel@gmail.com","template":null},"ts":1431141575}]}
+{ mandrill_events: '[{"event":"send","_id":"c5ec6113101b43bd9ba5767dab52e4d2","msg":{"ts":1431143558,"subj
+ect":"hello","email":"dummy@some.domain","tags":["TAG1","TAG2"],"opens":[],"clicks":[],"state":"sent","smt
+p_events":[],"subaccount":null,"resends":[],"reject":null,"_id":"c5ec6113101b43bd9ba5767dab52e4d2","metada
+ta":{"id":1},"sender":"fromjason.flogel@gmail.com","template":null},"ts":1431143558}]' }
+
+
+post via: postman chrome extension
+  with content type: application/x-www-form-urlencoded

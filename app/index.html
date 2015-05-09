@@ -19,7 +19,7 @@
         <div>State: {{message.msg.state}}</div>
         <div>Tags: {{message.msg.tags}}</div>
         <div>Metadata: {{message.msg.metadata}}</div>
-        <div>Timestamp: {{message.msg.ts | date:'medium'}}</div>
+        <div>Timestamp: {{message.msg.ts * 1000 | date:'medium'}}</div>
       </li>
     </ul>
   </p>
